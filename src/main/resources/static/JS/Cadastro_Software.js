@@ -1,4 +1,8 @@
 $("#enviar").click(enviarCadastroSoftware);
+$("#voltar").click(voltar);
+function voltar(){
+    window.location.href="/home";
+}
 
 function enviarCadastroSoftware(){
     let nome = $("#nome").val();

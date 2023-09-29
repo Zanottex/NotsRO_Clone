@@ -1,5 +1,17 @@
 $("#login").click(enviarlogin);
 
+    $("#matricula").keyup(function(event){
+        if (event.key === "Enter"){
+            $("#senha").focus();
+        }
+    });
+
+    $("#senha").keyup(function(event){
+            if (event.key === "Enter"){
+                enviarlogin();
+            }
+        });
+
 function enviarlogin(){
     let matricula = $("#matricula").val();
     let senha = $("#senha").val();
@@ -23,3 +35,5 @@ function enviarlogin(){
     }
     })
 }
+
+

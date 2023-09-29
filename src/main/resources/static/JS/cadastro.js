@@ -1,4 +1,8 @@
 $("#enviar").click(cadastrar);
+$("#voltar").click(voltar);
+function voltar(){
+    window.location.href="/home";
+}
 let btn = document.querySelector('#verSenha')
 let btnConfirm = document.querySelector('#verConfirmSenha')
 

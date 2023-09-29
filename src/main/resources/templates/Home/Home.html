@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,18 +10,33 @@
 </head>
 <body>
 <nav role="navigation">
+
     <div id="menuToggle">
+
         <input type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
 
         <ul id="menu">
-            <a href="#"><li>Home</li></a>
-            <a href="#"><li>Cadastrar Notebooks</li></a>
-            <a href="#"><li>Cadastrar usuários</li></a>
-            <a href="#"><li>Cadastrar Software</li></a>
-            <a href="#"><li>VTNC</li></a>
+            <li class="mb-3">
+                <div class="container">
+                    <h1 th:text="'Bem vindo(a): ' + ${usuario.nome}" style="color: blue;"></h1>
+                </div>
+            </li>
+
+            <div th:if="${usuario.id_cargo == 1}">
+            <a href="/Notes"><li>Cadastrar Notebooks</li></a>
+            <a href="/cadastro"><li>Cadastrar Usuários</li></a>
+            <a href="/Software/Cadastro"><li>Cadastrar Software</li></a>
+            </div>
+            <div th:if="${usuario.id_cargo == 2}">
+                <a href="#"><li>Cadastrar Notebooks</li></a>
+            </div>
+            <div th:if="${usuario.id_cargo == 3}">
+
+            </div>
+
         </ul>
     </div>
 </nav>

@@ -1,5 +1,8 @@
 $("#enviar").click(cadastrarNot);
-
+$("#voltar").click(voltar);
+function voltar(){
+    window.location.href="/home";
+}
 function cadastrarNot(){
     let numero = $("#numero").val();
     let patrimonio = $("#patrimonio").val();
