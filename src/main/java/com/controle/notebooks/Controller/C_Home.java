@@ -2,6 +2,7 @@ package com.controle.notebooks.Controller;
 
 
 import com.controle.notebooks.Model.M_Usuario;
+import com.controle.notebooks.Service.S_Usuario;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +19,9 @@ public class C_Home {
             model.addAttribute("usuario",session.getAttribute("usuario"));
 
             return "Home/home";
-        } else {
+        } else if(session.getAttribute("usuario")!=null){
+            return "Home/home";
+        }else {
             return "redirect:/";
         }
     }

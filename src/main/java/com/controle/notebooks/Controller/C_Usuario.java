@@ -44,5 +44,10 @@ public class C_Usuario {
         }
 
     }
+    @GetMapping("/logout")
+    public String getCadastro(HttpSession session){
+        session.setAttribute("usuario",null);
+        return "redirect:/";
+    }
 
 }
