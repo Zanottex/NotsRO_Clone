@@ -1,5 +1,4 @@
-$("#enviar").click(cadastrarNot);
-$("#voltar").click(voltar);
+
 function voltar(){
     window.location.href="/home";
 }

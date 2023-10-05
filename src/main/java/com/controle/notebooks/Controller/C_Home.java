@@ -1,8 +1,7 @@
 package com.controle.notebooks.Controller;
 
 
-import com.controle.notebooks.Model.M_Usuario;
-import com.controle.notebooks.Service.S_Usuario;
+
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

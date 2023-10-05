@@ -19,7 +19,7 @@ public class C_Notes {
     public String cadastrarNots(@RequestParam("numero") String numero,
                                 @RequestParam("patrimonio")String patrimonio
     ){
-        S_Notes.cadastraNots(numero,patrimonio);
-        return "Cadastro_Notes/Notes";
+        return S_Notes.cadastraNots(numero,patrimonio);
+
     }
 }

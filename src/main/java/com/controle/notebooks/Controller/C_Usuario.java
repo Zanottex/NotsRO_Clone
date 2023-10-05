@@ -27,8 +27,13 @@ public class C_Usuario {
     }
 
     @GetMapping("/")
-    public String getLogin(){
-        return "index";
+    public String getLogin(HttpSession session){
+        if(session.getAttribute("usuario")!=null){
+            return "redirect:/home";
+        }else{
+            return "index";
+        }
+
     }
 
     @PostMapping("/login")

@@ -11,6 +11,7 @@ public class S_Notes {
     public S_Notes(R_Notes r_notes){
         this.r_notes = r_notes;
     }
+
     public static String cadastraNots(String numero, String patrimonio){
         boolean podeSalvar = true;
        String mensagem = "";

@@ -4,44 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/Cadastro_Notes.css">
     <link rel="stylesheet" href="CSS/Home.css">
     <script src="JS/home.js" defer></script>
+    <script th:if="${usuario.id_cargo == 1}"src="JS/cadastro_notes.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Home</title>
 </head>
 <body>
+
 <nav role="navigation">
 
     <div id="menuToggle">
 
-        <input type="checkbox" />
+        <input type="checkbox"/>
         <span></span>
         <span></span>
         <span></span>
 
         <ul id="menu">
             <li class="mb-3">
-                <div class="container">
-                    <h1 th:text="'Bem vindo(a): ' + ${usuario.nome}" style="color: blue;"></h1>
+                <div class="container2">
+                    <h1 th:text="'Bem vindo(a): ' + ${usuario.nome}" style="color: black;"></h1>
                 </div>
             </li>
 
             <div th:if="${usuario.id_cargo == 1}">
-            <a href="/Notes"><li>Cadastrar Notebooks</li></a>
-            <a href="/cadastro"><li>Cadastrar Usuários</li></a>
-            <a href="/Software/Cadastro"><li>Cadastrar Software</li></a>
+                <a href="/Notes">
+                    <li>Cadastrar Notebooks</li>
+                </a>
+                <a href="/cadastro">
+                    <li>Cadastrar Usuários</li>
+                </a>
+                <a href="/Software/Cadastro">
+                    <li>Cadastrar Software</li>
+                </a>
             </div>
             <div th:if="${usuario.id_cargo == 2}">
-                <a href="#"><li>Cadastrar Notebooks</li></a>
+                <a href="#">
+                    <li>Cadastrar Notebooks</li>
+                </a>
             </div>
             <div th:if="${usuario.id_cargo == 3}">
             </div>
 
-            <a type="submit" class="btn btn-danger mt-5" href="/logout">Sair</a>
+            <a type="submit" class="btn btn-danger mt-5" id="logout">Sair</a>
         </ul>
     </div>
 </nav>
+<div class="container">
+
+</div>
 </body>
 </html>
