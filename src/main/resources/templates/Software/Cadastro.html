@@ -1,29 +1,30 @@
-<html lang='en' xmlns:th="http:/>/www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="../../JS/Cadastro_Software.js" defer></script>
-    <link rel="stylesheet" href="../../CSS/Cadastro_Software.css">
-    <title>Cadastro Software</title>
-</head>
 <body>
-<div class="login-page">
-    <h1>Cadastro Software</h1>
-    <div class="form">
-            <input type="text" id="nome" placeholder="Nome"/>
-            <div class="btn-group " role="group" aria-label="Basic radio toggle button group">
-                <input type="radio" class="btn-check" name="btnradio" id="free" autocomplete="off" checked>
-                <label class="btn btn-outline-primary" for="free">Não Exige Licença</label>
+<div class='container'>
+    <div class='card'>
+        <h1> Cadastrar Software</h1>
 
-                <input type="radio" class="btn-check" name="btnradio" id="exigelicenca" autocomplete="off">
-                <label class="btn btn-outline-primary" for="exigelicenca">Exige Licença</label>
+        <div id='msgError'></div>
+        <div id='msgSuccess'></div>
+
+        <div class="label-float">
+            <input type="text" id="Nome" placeholder=" " required>
+            <label id="labelNome" for="Nome">Nome</label>
+        </div>
+        <div class="btn-group " role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="free" autocomplete="off" checked>
+            <label class="btn btn-outline-" for="free">Não Exige Licença</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="pago" autocomplete="off">
+            <label class="btn btn-outline-" for="pago">Exige Licença</label>
+        </div>
+        <div class="row">
+            <div class="text-center">
+                <button id="enviar">Cadastrar</button>
             </div>
-            <button class="mt-2" id="enviar">Cadastrar</button>
-            <button class="mt-2" id="voltar">Voltar</button>
+
+        </div>
     </div>
 </div>
 </body>
+
 </html>

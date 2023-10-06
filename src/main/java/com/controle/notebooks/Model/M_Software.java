@@ -8,7 +8,7 @@ public class M_Software {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private boolean exigelicensa;
+    private boolean exige_licensa;
     private String nome;
 
     public Long getId() {
@@ -20,11 +20,11 @@ public class M_Software {
     }
 
     public boolean isExigeLicensa() {
-        return exigelicensa;
+        return exige_licensa;
     }
 
     public void setExigeLicensa(boolean exigeLicensa) {
-        this.exigelicensa = exigeLicensa;
+        this.exige_licensa = exigeLicensa;
     }
 
     public String getNome() {

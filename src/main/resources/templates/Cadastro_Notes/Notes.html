@@ -1,19 +1,27 @@
-<div class="caixaCadastro">
+<body>
+<div class='container'>
+    <div class='card'>
+        <h1> Cadastrar Notes</h1>
 
-        <h1>Cadastro de Notes</h1>
+        <div id='msgError'></div>
+        <div id='msgSuccess'></div>
 
-
-        <div class="caixaUsuario">
-            <input type="number" id="numero" name="numero" required=""> <!--Entry tipo senha-->
-            <label>Número do Notebook: </label>
+        <div class="label-float">
+            <input type="text" id="numero" placeholder=" " required>
+            <label id="labelNome" for="numero">Numero</label>
         </div>
-
-        <div class="caixaUsuario">
-            <input type="number" id="patrimonio" name="patrimonio" required=""> <!--Entry tipo senha-->
-            <label>Patrimônio </label>
+        <div class="label-float">
+            <input type="text" id="patrimonio" placeholder=" " required>
+            <label id="labelemail" for="patrimonio">Patrimônio</label>
         </div>
+        <div class="row">
+            <div class="text-center">
+                <button id="enviar">Cadastrar</button>
+            </div>
 
-        <div class="botao1 text-start">
-            <button id="enviar" class="bt-cadastro">Cadastrar</button> <!--Botão-->
         </div>
+    </div>
 </div>
+</body>
+
+</html>

@@ -13,7 +13,7 @@ public class S_Software {
         this.r_software = r_software;
     }
 
-    public static String cadastrarSoftware(String nome, boolean licenca) {
+    public static String cadastrarSoftware(String nome, boolean pago) {
         String mensagem = "";
 
         if (S_Generico.textoEstaVazio((nome))) {
@@ -21,7 +21,7 @@ public class S_Software {
         } else {
             M_Software m_software = new M_Software();
             m_software.setNome(nome);
-            m_software.setExigeLicensa(licenca);
+            m_software.setExigeLicensa(pago);
             try {
                 r_software.save(m_software);
                 mensagem+= "Software cadastrado com sucesso";

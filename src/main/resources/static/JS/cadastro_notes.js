@@ -1,6 +1,5 @@
 
-function voltar(){
-    window.location.href="/home";
+
 }
 function cadastrarNot(){
     let numero = $("#numero").val();

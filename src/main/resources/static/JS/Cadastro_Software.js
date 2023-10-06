@@ -1,19 +1,15 @@
-$("#enviar").click(enviarCadastroSoftware);
-$("#voltar").click(voltar);
-function voltar(){
-    window.location.href="/home";
-}
+
 
 function enviarCadastroSoftware(){
-    let nome = $("#nome").val();
-    let exigeLicenca = $("#exigelicenca")[0].checked;
+    let Nome = $("#Nome").val();
+    let pago = $("#pago")[0].checked;
 
     $.ajax({
         type: "POST",
         url:"/Software/Cadastro",
         data:{
-            nome: nome,
-            exigelicenca: exigeLicenca
+            Nome: Nome,
+            pago: pago,
         },
         success: function(data){
             alert("BOM");

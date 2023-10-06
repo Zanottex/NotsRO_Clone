@@ -1,11 +1,3 @@
-$("#enviar").click(cadastrar);
-$("#voltar").click(voltar);
-function voltar(){
-    window.location.href="/home";
-}
-let btn = document.querySelector('#verSenha')
-let btnConfirm = document.querySelector('#verConfirmSenha')
-
 
 let nome = document.querySelector('#nome')
 let labelNome = document.querySelector('#labelNome')

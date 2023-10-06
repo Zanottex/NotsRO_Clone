@@ -16,8 +16,8 @@ public class C_software {
 
     @PostMapping("/Software/Cadastro")
     @ResponseBody
-    public String cadastrarSoftware(@RequestParam("nome") String nome,
-                                    @RequestParam("exigelicenca") boolean exigelicenca) {
-        return S_Software.cadastrarSoftware(nome,exigelicenca);
+    public String cadastrarSoftware(@RequestParam("Nome") String Nome,
+                                    @RequestParam("pago") boolean pago) {
+        return S_Software.cadastrarSoftware(Nome,pago);
     }
 }
