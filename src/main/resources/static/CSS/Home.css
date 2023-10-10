@@ -165,3 +165,9 @@ body
 ul{
     height: 100vh;
 }
+.h1blanco{
+    color: #fff !important;
+}
+.row{
+    width: 100% !important;
+}

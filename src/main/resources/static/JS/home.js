@@ -2,8 +2,8 @@
 $('a').click(function(event){
     event.preventDefault();
     if(!$(this).hasClass('btn')){
-    $('a').removeClass('active disable text-Blue');
-    $(this).addClass('active disable text-Blue');
+    $('a').removeClass('active disabled text-Blue');
+    $(this).addClass('active disabled text-Blue');
     }
     controleRotasGet($(this).attr("href"));
 });
@@ -30,6 +30,11 @@ function controleRotasGet(url){
              $.get(url,function(data){
                 $(".container").html(data);
                 $("#enviar").click(enviarCadastroSoftware);
+             });
+        break;
+        case "/Hominha":
+             $.get(url,function(data){
+             $(".container").html(data);
              });
         break;
 

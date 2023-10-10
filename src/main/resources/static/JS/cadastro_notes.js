@@ -1,6 +1,6 @@
 
 
-}
+
 function cadastrarNot(){
     let numero = $("#numero").val();
     let patrimonio = $("#patrimonio").val();

@@ -17,6 +17,7 @@
     <script th:if="${usuario.id_cargo == 1}"src="JS/cadastro_notes.js" defer></script>
     <script th:if="${usuario.id_cargo == 1}"src="JS/cadastro.js" defer></script>
     <script th:if="${usuario.id_cargo == 1}"src="JS/Cadastro_Software.js" defer></script>
+    <script src="JS/hominha.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Home</title>
 </head>
@@ -41,24 +42,25 @@
                     <h1 th:text="'Bem vindo(a): ' + ${usuario.nome}" style="color: black;"></h1>
                 </div>
             </li>
+            <a href="/Hominha">
+                <li>Home</li>
+            </a>
 
             <div th:if="${usuario.id_cargo == 1}">
-                <a href="/Notes">
-                    <li>Cadastrar Notebooks</li>
-                </a>
-                <a href="/cadastro">
-                    <li>Cadastrar Usuários</li>
-                </a>
-                <a href="/Software/Cadastro">
-                    <li>Cadastrar Software</li>
-                </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Notes">Cadastrar Notebooks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastro">Cadastrar Usuários</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Software/Cadastro">Cadastrar Software</a>
+                </li>
             </div>
             <div th:if="${usuario.id_cargo == 2}">
-                <a href="#">
-                    <li>Cadastrar Notebooks</li>
-                </a>
-            </div>
-            <div th:if="${usuario.id_cargo == 3}">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Notes">Cadastrar Notebooks</a>
+                </li>
             </div>
 
             <a type="submit" class="btn btn-danger mt-5" href="/logout">Sair</a>
