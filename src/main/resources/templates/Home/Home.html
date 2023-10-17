@@ -18,6 +18,7 @@
     <script th:if="${usuario.id_cargo == 1}"src="JS/cadastro.js" defer></script>
     <script th:if="${usuario.id_cargo == 1}"src="JS/Cadastro_Software.js" defer></script>
     <script src="JS/hominha.js" defer></script>
+    <script src="JS/routs.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Home</title>
 </head>
@@ -45,6 +46,9 @@
             <a href="/Hominha">
                 <li>Home</li>
             </a>
+            <li class="nav-item">
+                <a class="nav-link" href="/edit/usuario">Perfil</a>
+            </li>
 
             <div th:if="${usuario.id_cargo == 1}">
                 <li class="nav-item">

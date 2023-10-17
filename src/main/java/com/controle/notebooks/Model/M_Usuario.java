@@ -14,6 +14,17 @@ public class M_Usuario {
     private Long id_cargo;
     private Long matricula;
     private String email;
+    private boolean ativo;
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+
+
 
 
 

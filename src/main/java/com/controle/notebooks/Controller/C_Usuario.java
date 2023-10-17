@@ -1,9 +1,12 @@
 package com.controle.notebooks.Controller;
 
+import com.controle.notebooks.Model.M_Resposta;
+import com.controle.notebooks.Model.M_Usuario;
 import com.controle.notebooks.Service.S_Usuario;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +25,7 @@ public class C_Usuario {
     }
 
     @PostMapping("/cadastro")
+    @ResponseBody
     public String cadatrarUsuario(@RequestParam("nome") String nome,
                                   @RequestParam("email") String email,
                                   @RequestParam("matricula") String matricula,
@@ -29,6 +33,35 @@ public class C_Usuario {
     ) {
         S_Usuario.cadastrarUsuario(nome, cargo, matricula, email);
         return "usuario/cadastro";
+    }
+    @GetMapping("/edit/usuario")
+    public String getEditUsuario(HttpServletRequest request,
+                                 HttpSession session,
+                                 Model model){
+        if (request.getHeader("Referer") != null){
+            Object usuario = session.getAttribute("usuario");
+            model.addAttribute("usuario",usuario);
+                    if(((M_Usuario) usuario).getId_cargo()==1){
+                        return "/usuario/pv/edit_usuario_admin";
+                    }else{
+                        return "/usuario/pv/edit_usuario";
+                    }
+        }else{
+            return "redirect:/";
+        }
+    }
+    @PostMapping("/edit/usuario")
+    public M_Resposta posteditUsuario(@RequestParam("nome") String nome,
+                                      @RequestParam("email") String email,
+                                      @RequestParam("senhaAtual") String senhaAtual,
+                                      @RequestParam("novaSenha") String novaSenha,
+                                      @RequestParam("confSenha") String confSenha,
+                                      @RequestParam(value="cargo", required = false) String cargo,
+                                      @RequestParam(value="matricula", required = false) String matricula,
+                                      @RequestParam(value="ativo", required = false) boolean ativo,
+                                      HttpSession session){
+
+        return S_Usuario.updateUsuario(nome,cargo,matricula,email,senhaAtual,novaSenha,confSenha,ativo, session.getAttribute("usuario"));
     }
 
     @GetMapping("/")
