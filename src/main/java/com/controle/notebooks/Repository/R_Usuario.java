@@ -1,7 +1,6 @@
 package com.controle.notebooks.Repository;
 
 import com.controle.notebooks.Model.M_Usuario;
-import jdk.jfr.Percentage;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;

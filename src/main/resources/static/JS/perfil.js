@@ -1,12 +1,12 @@
 function salvarPerfil(){
-    let nome = $("#nome").val()
-    let matricula = $("#matricula").val()
-    let email = $("#email").val()
-    let cargo = $("#cargo option:selected").val()
+    let nome = $("#nome").val();
+    let matricula = $("#matricula").val();
+    let email = $("#email").val();
+    let cargo = $("#cargo option:selected").val();
     let ativo = $("#ativo").prop("checked");
-    let senhaAtual = $("#senhaAtual").val()
-    let novaSenha = $("#novaSenha").val()
-    let confSenha = $("#confSenha").val()
+    let senhaAtual = $("#senhaAtual").val();
+    let novaSenha = $("#novaSenha").val();
+    let confSenha = $("#confSenha").val();
 
     $.ajax({
         type: "POST",
@@ -23,13 +23,13 @@ function salvarPerfil(){
         },
         success: function(data){
             if(data.sucesso){
-            alertaSucesso("Cadastro atualizado com sucesso")
+            alertaSucesso("Cadastro atualizado com sucesso");
             }else{
-            alert(data.mensagem)
+            alert(data.mensagem);
             }
         },
         error: function(){
-        alert("Deu ruim")
+        alert("Deu ruim");
         }
     });
 }

@@ -7,7 +7,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class S_Usuario {
+public class  S_Usuario {
     private static R_Usuario r_usuario;
 
     public static M_Usuario verificaLogin(String matricula, String senha){
@@ -69,12 +69,13 @@ public class S_Usuario {
     public static M_Resposta updateUsuario(String nome, String cargo, String matricula, String email, String senhaAtual, String novaSenha, String confSenha, boolean ativo, Object usuario){
        boolean podeEnviar = false;
        String mensagem = "";
+
         M_Usuario m_usuario = (M_Usuario) usuario;
 
         if(m_usuario.getId_cargo() != 1){
             matricula = m_usuario.getMatricula().toString();
             cargo = m_usuario.getId_cargo().toString();
-
+            ativo = m_usuario.isAtivo();
         }
        if(senhaAtual.equals(m_usuario.getSenha())){
         podeEnviar = true;
