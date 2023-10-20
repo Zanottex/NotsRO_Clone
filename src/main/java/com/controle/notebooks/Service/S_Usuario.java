@@ -91,11 +91,11 @@ public class  S_Usuario {
             podeEnviar = false;
             mensagem += "A matricula precisa ser preenchido";
         }
-           if(!novaSenha.equals(confSenha) && !S_Generico.textoEstaVazio(novaSenha)){
+        if(!novaSenha.equals(confSenha) && !S_Generico.textoEstaVazio(novaSenha)){
                podeEnviar = false;
                mensagem += "A confirmação de senha deve ser igual a nova senha";
-           }
-           if(podeEnviar){
+        }
+        if(podeEnviar){
                m_usuario.setNome(nome);
                m_usuario.setEmail(email);
                m_usuario.setMatricula(Long.valueOf(matricula));
@@ -111,7 +111,7 @@ public class  S_Usuario {
                    podeEnviar = false;
                    mensagem += "Falha ao tentar atualizar o cadastro: "+ e.getMessage();
                }
-           }
+        }
        }else{
            mensagem += "Senha inválida, o cadastro não pode ser editado";
        }

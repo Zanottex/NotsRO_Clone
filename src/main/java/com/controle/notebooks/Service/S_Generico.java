@@ -22,7 +22,7 @@ public class S_Generico {
     }
 
     public static boolean textoEstaVazio(String texto) {
-        return texto == null || texto.trim().equals(" ");
+        return texto == null || texto.trim().equals("");
     }
 
     public static String limparNumero(String number) {

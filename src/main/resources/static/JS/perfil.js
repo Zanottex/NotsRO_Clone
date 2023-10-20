@@ -23,7 +23,7 @@ function salvarPerfil(){
         },
         success: function(data){
             if(data.sucesso){
-            alertaSucesso("Cadastro atualizado com sucesso");
+            mensagemSucesso("Cadastro atualizado com sucesso");
             }else{
             alert(data.mensagem);
             }

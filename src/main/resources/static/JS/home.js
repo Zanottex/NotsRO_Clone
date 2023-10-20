@@ -2,8 +2,8 @@
 $('a').click(function(event){
     event.preventDefault();
     if(!$(this).hasClass('btn')){
-    $('a').removeClass('active disabled text-Blue');
-    $(this).addClass('active disabled text-Blue');
+    $('a').removeClass('active disabled text-White');
+    $(this).addClass('active disabled text-White');
     }
     controleRotasGet($(this).attr("href"));
 });
@@ -46,3 +46,20 @@ Swal.fire({
    timer: 1500
  })
  }
+function reserva(){
+    let dataReserva = $("#dataReserva").val()+' 00:00:00 -0300';
+    let quantidade = $("#quantidade").val();
+
+    if(dataReserva && quantidade){
+    $("#data-table").prepend('<tr>'+
+                                '<td>'+new Date(dataReserva).toLocaleDateString()+'</td>'+
+                                '<td>'+quantidade+'</td>'+
+                                '<td>'+new Date().toLocaleDateString()+'</td>'+
+                                '</tr>');
+        $("#dataReserva").val('');
+        $("#quantidade").val('');
+        $('#exampleModal').modal('hide');
+        }else{
+        alert("Por favor, preencha todos os campos");
+        }
+}
